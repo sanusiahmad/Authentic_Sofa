@@ -1,0 +1,457 @@
+:root {
+  --peach: #ffdab9;
+  --dark: #2f4f4f;
+  --cyan: #e0ffff;
+  --brown: #3e2723;
+  --green: #25d366;
+  --bluedark: #15273c;
+  --grey: #c9d1de;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Segeo UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* navigasi */
+:root {
+  --nav-height: 5px; /* Tinggi dari navigasi */
+}
+
+#hero-container,
+#about,
+#services,
+#portofolio,
+#contact {
+  padding-top: calc(var(--nav-height) + 10px); /* Tambahkan jarak ekstra */
+}
+
+#nav-container {
+  background-color: var(--bluedark);
+  position: sticky;
+  top: 0px;
+}
+.nav-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+}
+.nav-flex label,
+#humberger {
+  display: none;
+  color: var(--cyan);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+nav ul li a {
+  display: block;
+  color: var(--cyan);
+  padding: 0 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 60px;
+}
+nav ul li a:hover {
+  background-color: var(--grey);
+  color: var(--dark);
+  transition: all 0.3s;
+}
+.nav-brand h2 {
+  margin: 14px 0 0 10px;
+  color: var(--cyan);
+}
+
+/* whatsapp */
+.whatsapp-float {
+  position: fixed; /* Tetap di posisi meskipun halaman di-scroll */
+  bottom: 20px; /* Jarak dari bawah */
+  right: 20px; /* Jarak dari kanan */
+  z-index: 1000; /* Pastikan di atas elemen lain */
+  background-color: var(--cyan); /* Warna hijau khas WhatsApp */
+  border-radius: 50%; /* Membuat background bulat */
+  padding: 10px; /* Memberikan jarak antara ikon dan background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  transition: transform 0.3s ease; /* Efek animasi saat hover */
+}
+
+.whatsapp-float img {
+  width: 40px; /* Ukuran ikon */
+  height: 40px;
+  display: block; /* Menghilangkan ruang kosong ekstra */
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); /* Efek zoom saat ikon dihover */
+}
+
+/* Hero image */
+#hero-container {
+  background-image: url(../image/heroimage.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-attachment: fixed;
+}
+.text {
+  text-align: center;
+  color: var(--cyan);
+  font-size: 20px;
+}
+.button {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--green);
+  padding: 10px;
+  color: var(--cyan);
+  font-size: 16px;
+  border-radius: 10px;
+}
+.button:hover {
+  background-color: var(--dark);
+  color: var(--cyan);
+}
+
+/* Main */
+main {
+  width: 80%;
+  margin: auto;
+}
+
+/* About */
+#about h1 {
+  color: var(--dark);
+  text-align: center;
+  margin-top: 60px;
+}
+/* #about .about-deskripsi {
+  text-align: center;
+  color: var(--dark);
+} */
+.about-text h2 {
+  text-align: center;
+  color: var(--bluedark);
+}
+.about-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px auto;
+}
+.about-image,
+.about-text {
+  width: 50%;
+  margin: 14px;
+}
+.about-text p {
+  text-align: justify;
+  text-indent: 50px;
+}
+.about-text p span {
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.about-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Service */
+#services h1 {
+  color: var(--dark);
+  text-align: center;
+  margin-top: 60px;
+}
+#services .services-deskripsi {
+  text-align: center;
+  color: var(--dark);
+}
+.services-flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 30px auto;
+}
+.services-items {
+  width: 30%;
+  text-align: center;
+  padding: 5px 10px;
+}
+.services-items .fas {
+  color: var(--bluedark);
+}
+.services-items p {
+  text-align: justify;
+  text-indent: 30px;
+}
+
+/* Portofolio Flexbox */
+#portofolio h1 {
+  text-align: center;
+  margin-top: 60px;
+  color: var(--dark);
+}
+.portofolio-deskripsi {
+  text-align: center;
+  color: var(--dark);
+}
+.portofolio-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.portofolio-flex a img {
+  width: 300px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.portofolio-flex a img:hover {
+  transform: scale(1.05);
+  border-color: #444;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.modal:target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Tombol Close */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1; /* Pastikan tinggi elemen pas */
+  padding: 0; /* Hilangkan padding tambahan */
+  margin: 0; /* Hilangkan margin tambahan */
+  cursor: pointer;
+}
+
+.close::before,
+.close::after {
+  content: none; /* Pastikan tidak ada pseudo-element */
+}
+
+.close:hover {
+  color: #ff4d4d; /* Efek hover */
+}
+
+/* Navigasi */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.nav.prev {
+  left: 10px;
+}
+
+.nav.next {
+  right: 10px;
+}
+
+.nav:hover {
+  color: #ff4d4d;
+  cursor: pointer;
+}
+
+/* Contact */
+#contact h1 {
+  margin-top: 60px;
+  color: var(--dark);
+  text-align: center;
+}
+.contact-deskripsi {
+  text-align: center;
+  color: var(--dark);
+}
+.contact-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+  width: 100%;
+}
+.map {
+  width: 60%;
+}
+.map h3 {
+  text-align: center;
+  color: var(--dark);
+}
+.sosmed-deskripsi {
+  text-align: justify;
+  margin: 20px;
+  padding: 5px;
+}
+.map iframe {
+  border-radius: 10px;
+}
+.social-media {
+  width: 40%;
+  padding: 10px;
+}
+.social-media h3 {
+  text-align: center;
+  color: var(--dark);
+}
+.social-icon {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+  text-decoration: none;
+  color: var(--cyan);
+  padding: 5px;
+  border-radius: 10px;
+}
+.facebook {
+  background-color: #3b5998;
+}
+.instagram {
+  background-color: #e4405f;
+}
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+#copyright p {
+  text-align: center;
+  color: var(--dark);
+}
+
+/* versi tablet */
+@media screen and (max-width: 768px) {
+  /* tampilan icon humberger */
+  #nav-container .nav-flex label {
+    display: inline-block;
+    color: var(--cyan);
+    font-style: normal;
+    font-size: 30px;
+    padding: 8px;
+  }
+  /* susun ulang menu menjadi vertical */
+  #nav-container .nav-flex {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  nav ul li a {
+    display: block;
+    color: var(--cyan);
+    background-color: var(--bluedark);
+    padding: 0 30px;
+    height: auto;
+  }
+  /* pindahkan position brand ke kanan dan perkecil */
+  .nav-brand h2 {
+    position: absolute;
+    right: 20px;
+  }
+  /* untuk menampilkan/menyembunyikan */
+  #nav-container nav {
+    display: none;
+  }
+  /* menampilkan menu ketika garis 3 atau humberger di klik */
+  #nav-container .nav-flex input:checked ~ nav {
+    display: flex;
+  }
+  /* About */
+  .about-flex {
+    flex-direction: column;
+  }
+  .about-image,
+  .about-text {
+    width: auto;
+  }
+
+  /* Service */
+  .services-items {
+    width: 50%;
+  }
+
+  /* Portofolio */
+  .portofolio-items {
+    width: 40%;
+  }
+
+  /* Contact Us */
+  .contact-flex {
+    flex-direction: column;
+  }
+  .map,
+  .social-media {
+    width: 100%;
+  }
+}
+
+/* untuk versi smartphone */
+@media screen and (max-width: 481px) {
+  /* services */
+  .services-items {
+    width: 100%;
+  }
+  /* Portofolio */
+  .portofolio-items {
+    width: 100%;
+  }
+}
