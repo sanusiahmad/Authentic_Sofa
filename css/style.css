@@ -499,23 +499,12 @@ main {
   opacity: 0.8;
 }
 
-/* Gaya untuk footer */
-footer#copyright {
-  background-color: #333; /* Warna latar belakang */
-  color: #fff; /* Warna teks */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
   text-align: center;
-  padding: 20px 10px; /* Spasi dalam */
-  font-family: "Arial", sans-serif; /* Gaya font */
   font-size: 14px;
-  border-top: 2px solid #555; /* Garis atas */
-}
-
-footer#copyright .copyright-deskripsi p {
-  margin: 0; /* Hilangkan margin */
-}
-
-footer#copyright strong {
-  color: #ffcc00; /* Warna teks tebal */
 }
 
 /* versi tablet */
